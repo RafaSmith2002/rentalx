@@ -1,0 +1,19 @@
+{
+    "name": "default",    
+    "type": "postegres",
+    "url": "postgres://ejpgdoratwuped:454fac99210d37daee4dce71c8c5181efa0682eb9d5efef079a6d398357fe6dd@ec2-52-23-131-232.compute-1.amazonaws.com:5432/de52tlo5el0egd",
+    "synchroniza": "false",
+    "logging": "true",
+    "ssl": "true",
+    "extra": {
+        "ssl": {
+            "rejectUnauthorized": false
+        }
+    },
+
+    "migrations": ["./src/database/migrations/*.ts"],
+    "entities": ["./src/modules/**/entities/*.ts"],
+    "cli": {
+        "migrationsDir": "./src/database/migrations/"
+    }
+}

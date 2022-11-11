@@ -2,78 +2,80 @@
     "openapi": "3.0.0",
     "info": {
         "title": "Documentação da API de locação",
-        "description": "Esta API foi desenvolvida para locação de veiculos",
+        "description": "Esta API foi desenvolvida para locação de veículos",
         "version": "1.0.0",
         "contact":{
             "name": "Rafael Silva",
-            "email": "rafaelsmith2002@gmail.com"
+            "email": "rafaelsmith2002@hotmail.com"
         }
     },
     "paths": {
         "/categories": {
             "post": {
-            "tags": ["Category"],
-            "summary": "Criar novas categorias",
-            "description" : "Rota utilizada para criação de novas categorias",
-            "requestBody" : {
-                "content": {
-                    "application/Json": {
-                        "schema": {
-                            "type": "object",
-                            "properties": {
-                                "name": {
-                                    "type": "string"
-                                },
-                                "description": {
-                                    "type": "string" 
-                                }
-                            },
-                                "exemple": {
-                                    "name": "Categoria de exemplo",
-                                    "description": "Descrição da categoria de exemplo"
-                                }
-                        }
-                    }
-                }
-            }
-        },
-        "response": {
-            "201": {
-                "description": "Criado"
-            },
-            "500": {
-                "description": "Categoria já existente"
-            }
-        }
-    },
-    "get": {
-        "tags": ["Category"],
-        "summary": "Lista todas as categorias",
-        "description": "Rota de consulta de categorias",
-        "responses": {
-            "200": {
-                "description": "Sucesso",
-                "content": {
-                    "application/Json": {
-                        "schema": {
-                            "type": "array",
-                            "items": {
-                             "type": "object",
+                "tags": ["Category"],
+                "sumary": "Criar novas categorias",
+                "description" : "Rota utilizada para criação de novas categorias",
+                "requestBody" : {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type" : "object",
                                 "properties": {
                                     "name": {
                                         "type": "string"
                                     },
                                     "description": {
                                         "type": "string"
+                                    }                               
+
+                                },
+                                    "exemple": {
+                                        "name": "Categoria de exemplo",
+                                        "description": "Descrição da categoria de exemplo"
+                                    }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Criado"
+                    },
+                    "500": {
+                        "description": "Categoria já existente"
+                    }
+                }
+            },
+            "get": {
+                "tags": ["Category"],
+                "sumary": "Lista todas as categorias",
+                "description": "Rota de consulta de categorias",
+                "responses": {
+                    "200": {
+                        "description": "Sucesso",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                     "type": "object",
+                                        "properties": {
+                                            "name": {
+                                                "type": "string"
+                                            },
+                                            "description": {
+                                                "type": "string"
+                                            }
+                                        }
                                     }
                                 }
                             }
-                         }
-                     }
-                 }
-             }
-          }
-      }
-   }
+                        }
+                    }
+                }
+            }
 
+        }
+    }
+    
 }
